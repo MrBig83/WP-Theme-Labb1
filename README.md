@@ -1,4 +1,6 @@
 # WP-Theme-Lab1
 
+
+
 ## TO BE DELETED
-https://www.mamp.info/en/windows/
+Dont forget to download [MAMP](https://www.mamp.info/en/windows/)
