@@ -60,6 +60,26 @@ function my_sidebars(){
 }
 add_action('widgets_init', 'my_sidebars');
 
+//Register pagination function
+function pagination(){
+    
+    echo '<nav class="navigation pagination">';
+    echo '<h2 class="screen-reader-text">Inläggsnavigering</h2>';
+    if( get_previous_posts_link() ) {
+        
+        previous_posts_link( "Föregående inlägg", array('class' => 'my-class') );
+
+        //echo previous_posts_link( "Föööregående inlägg", array('class' => 'prev page-numbers') );
+    }
+    if (get_next_posts_link()) {
+        echo '<div class="next page-numbers">';
+            next_posts_link( "Nästaaa inlägg", null, 'next page-numbers' );
+        echo '</div>';
+    }
+    echo '</nav>';
+   
+}
+
 
 
 

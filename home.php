@@ -8,7 +8,7 @@
 					<div class="row">
 						<div id="primary" class="col-xs-12 col-md-9">
                             <h1>
-                                <?php 
+                                <?php //Detta är en funktion som ersätter behovet av exempelvis author.php
                                     if (is_category()) {
                                         echo "Blogg";
                                     } elseif (is_tag()) {
@@ -30,16 +30,19 @@
                                             get_template_part('template-parts/content', 'archive');
                                             
                                         };
-                                    }; 
+                                        pagination();
+                                    
+                                    };                                     
                                 ?>
+
+
                         </div>
-                        <!-- Här kan jag lägga in pagination-->
-
+                        
                         <?php get_template_part('inc/parts/blog', 'sidebar'); ?>
+                        
+                        
 
-
-
-
+                        
                     </div>
                 </div>
             </section>
