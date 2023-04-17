@@ -2,7 +2,7 @@
     get_header();
 ?>
 
-<main> <!-- Ta bort MAIN?  -->
+
     
 
     
@@ -10,7 +10,7 @@
         get_template_part('template-parts/content', 'effect');
     ?>
 
-</main>
+
 
 <?php
     get_footer();

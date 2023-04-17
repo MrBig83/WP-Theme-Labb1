@@ -1,8 +1,8 @@
 <?php
 function labb1_theme_support(){
-    //För att få en dynamisk sidtitel
-    add_theme_support('title-tag');
-    add_theme_support('custom-logo');
+    
+    add_theme_support('title-tag'); //För att få en dynamisk sidtitel
+    add_theme_support('custom-logo'); //För att kunna lägga till logo på sidan
     add_theme_support('post-thumbnails');
     add_theme_support('widgets');
 }
@@ -16,13 +16,12 @@ function labb1_menus(){
 
     );
 
-    register_nav_menus($locations); //Lägga till menyer. (Informera WP att det finns meny)
+    register_nav_menus($locations); 
 }
 
 add_action('init', 'labb1_menus');
 
-
-    function labb1_register_styles(){
+    function labb1_register_styles(){ //Läser in de olika stylesheets
         $version = wp_get_theme()->get('Version');
         wp_enqueue_style('labb1-bootstrap', get_template_directory_uri(). "/assets/css/bootstrap.css", array(), '3.3.7', 'all');
         wp_enqueue_style('labb1-style', get_template_directory_uri(). "/assets/css/main.css", array('labb1-bootstrap'), $version, 'all');
@@ -30,13 +29,11 @@ add_action('init', 'labb1_menus');
     }
     add_action('wp_enqueue_scripts', 'labb1_register_styles' );
 
-    function labb1_register_scripts(){
+    function labb1_register_scripts(){ //Läser in de olika scripten
         wp_enqueue_script('labb1-jquery', get_template_directory_uri()."/assets/js/jquery.js", array(), '1.0', true );
         wp_enqueue_script('labb1-script', get_template_directory_uri()."/assets/js/script.js", array(), '1.0', true );
     }
     add_action('wp_enqueue_scripts', 'labb1_register_scripts' );
-
-
 
 //Register sidebar
 function my_sidebars(){
@@ -53,6 +50,7 @@ function my_sidebars(){
         array(
             'name' => 'Footer',
             'id' => 'footer',
+            'before_widget' => '',
             'before_title' => '<h2>',
             'after_title' => '</h2>'
         )
@@ -60,29 +58,4 @@ function my_sidebars(){
 }
 add_action('widgets_init', 'my_sidebars');
 
-//Register pagination function
-function pagination(){
-    
-    echo '<nav class="navigation pagination">';
-    echo '<h2 class="screen-reader-text">Inläggsnavigering</h2>';
-    if( get_previous_posts_link() ) {
-        
-        previous_posts_link( "Föregående inlägg", array('class' => 'my-class') );
-
-        //echo previous_posts_link( "Föööregående inlägg", array('class' => 'prev page-numbers') );
-    }
-    if (get_next_posts_link()) {
-        echo '<div class="next page-numbers">';
-            next_posts_link( "Nästaaa inlägg", null, 'next page-numbers' );
-        echo '</div>';
-    }
-    echo '</nav>';
-   
-}
-
-
-
-
 ?> 
-
-

@@ -38,9 +38,6 @@
 
                         <?php get_template_part('inc/parts/blog', 'sidebar'); ?>
 
-
-
-
                     </div>
                 </div>
             </section>

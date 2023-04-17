@@ -20,7 +20,11 @@
                             </li>
                             
                         </ul>
-                        <p><?php the_content(); ?> </p>
+                        <p><?php the_content(); ?> 
+                        </p>
+                        
+ 
+                        
                     </article>
                 </div>
 
