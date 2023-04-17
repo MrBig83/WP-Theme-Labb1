@@ -1,5 +1,3 @@
-
-
 <main>
     <section>
         <div class="container">
@@ -18,22 +16,12 @@
                             <li>
                                 <i class="fa fa-tag"></i> <a href=""><?php the_category(', '); ?></a>
                             </li>
-                            
                         </ul>
-                        <p><?php the_content(); ?> </p>
+                        <p><?php the_content(); ?> 
+                        </p>
                     </article>
                 </div>
-
-
-
                 <?php get_template_part('inc/parts/blog', 'sidebar'); ?>
-
-
-
-
-
-
-
             </div>
         </div>
     </section>
