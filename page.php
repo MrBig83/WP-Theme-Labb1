@@ -14,13 +14,8 @@
                 </div>
             </div>
         </div>
-    </section>
-    
+    </section>    
 </main>
-
-
-
-
 
 <?php
     get_footer();
